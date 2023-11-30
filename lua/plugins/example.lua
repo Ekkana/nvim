@@ -1,30 +1,16 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
 if true then return {
-  {
-    "folke/tokyonight.nvim",
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
-  {
-  "nvim-telescope/telescope.nvim",
-  dependencies = {
-    {
-        "nvim-telescope/telescope-live-grep-args.nvim" ,
-        -- This will not install any breaking changes.
-        -- For major updates, this must be adjusted manually.
-        version = "^1.0.0",
-    },
-  },
-  config = function()
-    require("telescope").load_extension("live_grep_args")
-  end,
-  }
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   opts = {
+  --     transparent = true,
+  --     styles = {
+  --       sidebars = "transparent",
+  --       floats = "transparent",
+  --     },
+  --   },
+  -- },
 } end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
