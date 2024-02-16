@@ -3,3 +3,7 @@
 -- Add any additional keymaps here
 --
 vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+vim.keymap.set("n", "<C-k>", "<C-u>")
+
+-- nnoremap <C-k> <C-u>
+-- nnoremap <C-j> <C-d>
