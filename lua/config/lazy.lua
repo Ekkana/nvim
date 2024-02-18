@@ -59,4 +59,7 @@ require("lazy").setup({
       },
     },
   },
+  -- plugins = {
+  --   ["ekkana/find-next-change-nvim"] = "~/projects/find-next-change-nvim/",
+  -- },
 })
