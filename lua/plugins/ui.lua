@@ -2,10 +2,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "vscode",
     },
   },
 
+  {
+    "Mofiqul/vscode.nvim",
+  },
   -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   -- lazy = true,
@@ -14,17 +17,17 @@ return {
   --     transparent = true,
   --   },
   -- },
-  {
-    "folke/tokyonight.nvim",
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-        keywords = { italic = false },
-      },
-    },
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   opts = {
+  --     -- transparent = true,
+  --     styles = {
+  --       -- sidebars = "transparent",
+  --       -- floats = "transparent",
+  --       keywords = { italic = false },
+  --     },
+  --   },
+  -- },
   -- -- add gruvbox
   -- { "ellisonleao/gruvbox.nvim" },
   --
