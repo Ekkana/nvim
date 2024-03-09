@@ -1,9 +1,16 @@
 return {
-  dir = "~/projects/find-next-change-nvim/",
-  -- "ekkana/find-next-change-nvim",
-  -- "~/.config/nvim/lua/custom/find-next/lua/init.lua",
-  -- "~/projects/find-next",
+  -- dir = "~/projects/find-next-change-nvim/",
+  "ekkana/find-next-change-nvim",
   config = function()
-    require("find-next")
+    local find = require("find-next")
+
+    find.listen_to_events()
+
+    vim.keymap.set("n", "<S-Down>", function()
+      find.findNextBlockLoop()
+    end)
+    vim.keymap.set("n", "<S-Up>", function()
+      find.findPrevBlockLoop()
+    end)
   end,
 }
