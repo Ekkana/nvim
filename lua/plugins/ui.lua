@@ -1,118 +1,36 @@
+-- return { -- You can easily change to a different colorscheme.
+-- 	-- Change the name of the colorscheme plugin below, and then
+-- 	-- change the command in the config to whatever the name of that colorscheme is.
+-- 	--
+-- 	-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+-- 	"folke/tokyonight.nvim",
+-- 	priority = 1000, -- Make sure to load this before all the other start plugins.
+-- 	init = function()
+-- 		-- Load the colorscheme here.
+-- 		-- Like many other themes, this one has different styles, and you could load
+-- 		-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+-- 		vim.cmd.colorscheme("tokyonight-night")
+--
+-- 		-- You can configure highlights by doing something like:
+-- 		vim.cmd.hi("Comment gui=none")
+-- 	end,
+-- }
+--
 return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "vscode",
-    },
-    -- opts = {
-    --   colorscheme = "solarized-osaka",
-    -- },
-  },
+	"Mofiqul/vscode.nvim",
+	priority = 1000,
+	init = function()
+		vim.cmd.colorscheme("vscode")
+	end,
+	config = function()
+		require("vscode").setup({
+			-- Alternatively set style in setup
+			-- style = 'light'
 
-  {
-    "Mofiqul/vscode.nvim",
-
-    config = function()
-      require("vscode").setup({
-        -- Alternatively set style in setup
-        -- style = 'light'
-
-        -- Enable transparent background
-        transparent = false,
-      })
-      vim.keymap.set("n", "<leader>td", ":lua require('vscode').load('dark')<CR>")
-      vim.keymap.set("n", "<leader>tl", ":lua require('vscode').load('light')<CR>")
-    end,
-  },
-  -- {
-  --   "craftzdog/solarized-osaka.nvim",
-  --   -- lazy = true,
-  --   -- priority = 1000,
-  --   opts = {
-  --     transparent = true,
-  --   },
-  -- },
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   opts = {
-  --     -- transparent = true,
-  --     styles = {
-  --       -- sidebars = "transparent",
-  --       -- floats = "transparent",
-  --       keywords = { italic = false },
-  --     },
-  --   },
-  -- },
-  -- -- add gruvbox
-  -- { "ellisonleao/gruvbox.nvim" },
-  --
-  -- -- messages, cmdline and the popupmenu
-  -- {
-  --   "folke/noice.nvim",
-  --   opts = function(_, opts)
-  --     table.insert(opts.routes, {
-  --       filter = {
-  --         event = "notify",
-  --         find = "No information available",
-  --       },
-  --       opts = { skip = true },
-  --     })
-  --     local focused = true
-  --     vim.api.nvim_create_autocmd("FocusGained", {
-  --       callback = function()
-  --         focused = true
-  --       end,
-  --     })
-  --     vim.api.nvim_create_autocmd("FocusLost", {
-  --       callback = function()
-  --         focused = false
-  --       end,
-  --     })
-  --     table.insert(opts.routes, 1, {
-  --       filter = {
-  --         cond = function()
-  --           return not focused
-  --         end,
-  --       },
-  --       view = "notify_send",
-  --       opts = { stop = false },
-  --     })
-  --
-  --     opts.commands = {
-  --       all = {
-  --         -- options for the message history that you get with `:Noice`
-  --         view = "split",
-  --         opts = { enter = true, format = "details" },
-  --         filter = {},
-  --       },
-  --     }
-  --
-  --     vim.api.nvim_create_autocmd("FileType", {
-  --       pattern = "markdown",
-  --       callback = function(event)
-  --         vim.schedule(function()
-  --           require("noice.text.markdown").keys(event.buf)
-  --         end)
-  --       end,
-  --     })
-  --
-  --     opts.presets.lsp_doc_border = true
-  --   end,
-  -- },
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   opts = {
-  --     timeout = 5000,
-  --   },
-  -- },
-  -- -- animations
-  -- {
-  --   "echasnovski/mini.animate",
-  --   event = "VeryLazy",
-  --   opts = function(_, opts)
-  --     opts.scroll = {
-  --       enable = false,
-  --     }
-  --   end,
-  -- },
+			-- Enable transparent background
+			transparent = false,
+		})
+		vim.keymap.set("n", "<leader>td", ":lua require('vscode').load('dark')<CR>", { desc = "[T]heme [D]ark" })
+		vim.keymap.set("n", "<leader>tl", ":lua require('vscode').load('light')<CR>", { desc = "[T]heme [L]ight" })
+	end,
 }
