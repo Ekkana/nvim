@@ -4,10 +4,25 @@ return {
     opts = {
       colorscheme = "vscode",
     },
+    -- opts = {
+    --   colorscheme = "solarized-osaka",
+    -- },
   },
 
   {
     "Mofiqul/vscode.nvim",
+
+    config = function()
+      require("vscode").setup({
+        -- Alternatively set style in setup
+        -- style = 'light'
+
+        -- Enable transparent background
+        transparent = false,
+      })
+      vim.keymap.set("n", "<leader>td", ":lua require('vscode').load('dark')<CR>")
+      vim.keymap.set("n", "<leader>tl", ":lua require('vscode').load('light')<CR>")
+    end,
   },
   -- {
   --   "craftzdog/solarized-osaka.nvim",

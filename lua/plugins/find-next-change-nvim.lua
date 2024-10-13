@@ -1,6 +1,6 @@
 return {
-  -- dir = "~/projects/find-next-change-nvim/",
-  "ekkana/find-next-change-nvim",
+  -- "ekkana/find-next-change-nvim",
+  dir = "~/projects/find-next-change-nvim/",
   config = function()
     local find = require("find-next")
 
