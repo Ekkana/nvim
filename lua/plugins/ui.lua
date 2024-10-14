@@ -16,21 +16,41 @@
 -- 	end,
 -- }
 --
-return {
-	"Mofiqul/vscode.nvim",
-	priority = 1000,
-	init = function()
-		vim.cmd.colorscheme("vscode")
-	end,
-	config = function()
-		require("vscode").setup({
-			-- Alternatively set style in setup
-			-- style = 'light'
+-- return {
+-- 	"Mofiqul/vscode.nvim",
+-- 	priority = 1000,
+-- 	init = function()
+-- 		vim.cmd.colorscheme("vscode")
+-- 	end,
+-- 	config = function()
+-- 		require("vscode").setup({
+-- 			-- Alternatively set style in setup
+-- 			-- style = 'light'
+--
+-- 			-- Enable transparent background
+-- 			transparent = false,
+-- 		})
+-- 		vim.keymap.set("n", "<leader>td", ":lua require('vscode').load('dark')<CR>", { desc = "[T]heme [D]ark" })
+-- 		vim.keymap.set("n", "<leader>tl", ":lua require('vscode').load('light')<CR>", { desc = "[T]heme [L]ight" })
+-- 	end,
+-- }
+-- return {
+-- 	"craftzdog/solarized-osaka.nvim",
+-- 	priority = 1000,
+-- 	lazy = false,
+-- 	init = function()
+-- 		vim.cmd.colorscheme("solarized-osaka")
+-- 	end,
+-- 	config = function() end,
+-- }
 
-			-- Enable transparent background
-			transparent = false,
-		})
-		vim.keymap.set("n", "<leader>td", ":lua require('vscode').load('dark')<CR>", { desc = "[T]heme [D]ark" })
-		vim.keymap.set("n", "<leader>tl", ":lua require('vscode').load('light')<CR>", { desc = "[T]heme [L]ight" })
+return {
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	lazy = false,
+	init = function()
+		vim.cmd.colorscheme("catppuccin")
 	end,
+	config = function() end,
 }
