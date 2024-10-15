@@ -43,7 +43,7 @@
 -- 	end,
 -- 	config = function() end,
 -- }
-
+--
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
