@@ -155,6 +155,10 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- my keymaps
+vim.keymap.set({ "x", "n", "s" }, ":W", "<cmd>w<cr><esc>", { desc = "Save file" })
+vim.o.guicursor = "n-v-c:block,i:block-blinkon2"
+vim.keymap.set("n", "<leader>td", "<cmd>set bg=dark<CR>", { desc = "[T]heme [D]ark" })
+vim.keymap.set("n", "<leader>tl", "<cmd>set bg=light<CR>", { desc = "[T]heme [L]ight" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.opt.scrolloff = 16 -- Minimal number of screen lines to keep above and below the cursor.
@@ -393,6 +397,13 @@ require("lazy").setup({
 				--   },
 				-- },
 				-- pickers = {}
+				-- pickers = {
+				-- 	live_grep = {
+				-- 		additional_args = function()
+				-- 			return { "--hidden" }
+				-- 		end,
+				-- 	},
+				-- },
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
@@ -412,7 +423,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
 			-- vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-			-- vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+			vim.keymap.set("n", "<leader>k", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 			-- vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			-- vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			-- vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
