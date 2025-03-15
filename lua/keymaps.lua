@@ -1,15 +1,9 @@
 -- my keymaps
 vim.keymap.set({ "x", "n", "s" }, ":W", "<cmd>w<cr><esc>", { desc = "Save file" })
-vim.o.guicursor = "n-v-c:block,i:block-blinkon2"
 vim.keymap.set("n", "<leader>td", "<cmd>set bg=dark<CR>", { desc = "[T]heme [D]ark" })
 vim.keymap.set("n", "<leader>tl", "<cmd>set bg=light<CR>", { desc = "[T]heme [L]ight" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.opt.scrolloff = 16 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
-vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
-vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
