@@ -1,19 +1,19 @@
 return {
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		lazy = false,
-		init = function()
-			vim.cmd.colorscheme("catppuccin")
-		end,
-		config = function()
-			require("catppuccin").setup({
-				-- transparent_background = true,
-				-- colorscheme = "dark_catppuccino",
-			})
-		end,
-	},
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        lazy = false,
+        init = function()
+            vim.cmd.colorscheme("catppuccin")
+        end,
+        config = function()
+            require("catppuccin").setup({
+                -- transparent_background = true,
+                -- colorscheme = "dark_catppuccino",
+            })
+        end,
+    },
 }
 -- return { -- You can easily change to a different colorscheme.
 -- 	-- Change the name of the colorscheme plugin below, and then
