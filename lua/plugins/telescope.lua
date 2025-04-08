@@ -75,6 +75,28 @@ return { -- Fuzzy Finder (files, lsp, etc)
             },
         })
 
+        -- Telescope ignore patterns
+        local telescope_ignore_patterns = {
+            ".*lock",
+            ".*lock.json",
+        }
+
+        vim.keymap.set("n", "<leader>ti", function()
+            vim.g.telescope_ignore_enabled = not vim.g.telescope_ignore_enabled
+
+            -- display the message on the screen on toggle
+            if vim.g.telescope_ignore_enabled then
+                vim.notify("Telescope ignore patterns enabled")
+            else
+                vim.notify("Telescope ignore patterns disabled")
+            end
+
+            require("telescope.config").set_defaults({
+                file_ignore_patterns = vim.g.telescope_ignore_enabled and telescope_ignore_patterns
+                    or {},
+            })
+        end, { noremap = true, desc = "Toggle telescope ignore patterns" })
+
         -- Enable Telescope extensions if they are installed
         pcall(require("telescope").load_extension, "fzf")
         pcall(require("telescope").load_extension, "ui-select")
