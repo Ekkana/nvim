@@ -10,7 +10,7 @@ return {
         config = function()
             require("catppuccin").setup({
                 -- transparent_background = true,
-                -- colorscheme = "dark_catppuccino",
+                colorscheme = "dark_catppuccino",
             })
         end,
     },

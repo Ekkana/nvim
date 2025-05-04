@@ -11,13 +11,24 @@
 -- See `:help gitsigns` to understand what the configuration keys do
 return { -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
-    opts = {
-        signs = {
-            add = { text = "+" },
-            change = { text = "~" },
-            delete = { text = "_" },
-            topdelete = { text = "‾" },
-            changedelete = { text = "~" },
-        },
-    },
+    config = function()
+        require("gitsigns").setup({
+            signs = {
+                add = { text = "+" },
+                change = { text = "~" },
+                delete = { text = "_" },
+                topdelete = { text = "‾" },
+                changedelete = { text = "~" },
+            },
+            on_attach = function(bufnr)
+                local gs = require("gitsigns")
+                vim.keymap.set(
+                    "n",
+                    "<leader>tb",
+                    gs.toggle_current_line_blame,
+                    { desc = "[T]oggle [Blame]" }
+                )
+            end,
+        })
+    end,
 }
