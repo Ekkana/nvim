@@ -1,9 +1,14 @@
 -- my keymaps
-vim.keymap.set({ "x", "n", "s" }, ":W", "<cmd>w<cr><esc>", { desc = "Save file" })
+-- vim.keymap.set("n", "<leader>tl", "<cmd>tabnext<CR>", { desc = "Switch to next tab" })
+vim.keymap.set("n", "<leader>th", "<cmd>tabprevious<CR>", { desc = "[T]ab previous" })
+vim.keymap.set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "[T]ab [q]uit" })
+
+vim.keymap.set({ "n", "v" }, "op", '"0p', { desc = "Paste from clipboard" })
+-- vim.keymap.set({ "x", "n", "s" }, ":W", "<cmd>w<cr><esc>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>td", "<cmd>set bg=dark<CR>", { desc = "[T]heme [D]ark" })
 vim.keymap.set("n", "<leader>tl", "<cmd>set bg=light<CR>", { desc = "[T]heme [L]ight" })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "which_key_ignore" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "which_key_ignore" })
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -13,18 +18,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set(
-    "n",
-    "<leader>q",
-    vim.diagnostic.setloclist,
-    { desc = "Open diagnostic [Q]uickfix list" }
-)
-vim.keymap.set(
-    "n",
-    "<leader>d",
-    vim.diagnostic.open_float,
-    { desc = "Open [D]iagnostic floating window" }
-)
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "which_key_ignore" })
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "which_key_ignore" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

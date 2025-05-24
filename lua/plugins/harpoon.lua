@@ -9,34 +9,29 @@ return {
             save_on_toggle = true,
         },
     },
-    keys = function()
-        local keys = {
-            {
-                "<leader>H",
-                function()
-                    require("harpoon"):list():add()
-                end,
-                desc = "Harpoon File",
-            },
-            {
-                "<leader>h",
-                function()
-                    local harpoon = require("harpoon")
-                    harpoon.ui:toggle_quick_menu(harpoon:list())
-                end,
-                desc = "Harpoon Quick Menu",
-            },
-        }
+    config = function()
+        local harpoon = require("harpoon")
 
-        for i = 1, 5 do
-            table.insert(keys, {
-                "<leader>" .. i,
-                function()
-                    require("harpoon"):list():select(i)
-                end,
-                desc = "Harpoon to File " .. i,
-            })
-        end
-        return keys
+        harpoon:setup()
+
+        vim.keymap.set("n", "<leader>h", function()
+            harpoon:list():add()
+        end, { desc = "which_key_ignore" })
+        vim.keymap.set("n", "<leader>H", function()
+            harpoon.ui:toggle_quick_menu(harpoon:list())
+        end, { desc = "which_key_ignore" })
+
+        vim.keymap.set("n", "<leader>1", function()
+            harpoon:list():select(1)
+        end, { desc = "which_key_ignore" })
+        vim.keymap.set("n", "<leader>2", function()
+            harpoon:list():select(2)
+        end, { desc = "which_key_ignore" })
+        vim.keymap.set("n", "<leader>3", function()
+            harpoon:list():select(3)
+        end, { desc = "which_key_ignore" })
+        vim.keymap.set("n", "<leader>4", function()
+            harpoon:list():select(4)
+        end, { desc = "which_key_ignore" })
     end,
 }

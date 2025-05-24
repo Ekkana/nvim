@@ -1,3 +1,14 @@
+vim.diagnostic.config({
+    virtual_text = {
+        source = "always", -- This ensures the diagnostic source is always shown
+        prefix = "●", -- You can change this to whatever you like for the prefix
+        spacing = 2, -- Spacing between your code and the error message
+    },
+    signs = true, -- This puts the little icons in the gutter
+    underline = true, -- This underlines the problematic text
+    -- Other options as needed
+})
+
 vim.o.guicursor = "n-v-c:block,i:block-blinkon2"
 vim.opt.scrolloff = 12 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
