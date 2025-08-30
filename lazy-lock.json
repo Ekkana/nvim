@@ -10,6 +10,7 @@
   "copilot.vim": { "branch": "release", "commit": "f3d66c148aa60ad04c0a21d3e0a776459de09eb2" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "fidget.nvim": { "branch": "main", "commit": "4d5858bd4c471c895060e1b9f3575f1551184dc5" },
+  "find-next-change-nvim": { "branch": "main", "commit": "b753d52d2980e28a8892e9d3a2b4b6140711447b" },
   "fzf-lua": { "branch": "main", "commit": "a5249629afe25215674c7a5e48f5cd2d416c58d8" },
   "gitsigns.nvim": { "branch": "main", "commit": "6e3c66548035e50db7bd8e360a29aec6620c3641" },
   "harpoon": { "branch": "harpoon2", "commit": "ed1f853847ffd04b2b61c314865665e1dadf22c7" },

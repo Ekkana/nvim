@@ -9,6 +9,8 @@ vim.diagnostic.config({
     -- Other options as needed
 })
 
+vim.o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.o.guicursor = "n-v-c:block,i:block-blinkon2"
 vim.opt.scrolloff = 12 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
